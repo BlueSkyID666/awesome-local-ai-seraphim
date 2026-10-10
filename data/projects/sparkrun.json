@@ -1,0 +1,38 @@
+{
+  "id": "sparkrun",
+  "name": "sparkrun",
+  "repository": "https://github.com/spark-arena/sparkrun",
+  "description": "Launch, manage, and stop recipe-based inference workloads on single-node or multi-node DGX Spark setups.",
+  "category": "deployment",
+  "use_cases": [
+    "serve-models",
+    "manage-clusters",
+    "bootstrap-local-ai"
+  ],
+  "platforms": [
+    "linux"
+  ],
+  "hardware": [
+    "dgx-spark"
+  ],
+  "local_mode": "local",
+  "compatibility": [
+    "vLLM, SGLang, and llama.cpp recipes; SSH-based node management."
+  ],
+  "limitations": [
+    "Setup can change SSH, sudoers, and host services; review the recipe and requested permissions.",
+    "Anonymous usage telemetry is on by default; SPARKRUN_NO_TELEMETRY=1 disables it for one process.",
+    "The bundled SparkRoute integration has separate AGPL licensing; check the selected channel's defaults."
+  ],
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://raw.githubusercontent.com/spark-arena/sparkrun/b444da874923fd27228dcb98ab844c328a91752d/LICENSE"
+  },
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/spark-arena/sparkrun/b444da874923fd27228dcb98ab844c328a91752d/README.md",
+      "note": "Upstream description, setup, and documented requirements."
+    }
+  ],
+  "last_reviewed": "2026-10-10"
+}

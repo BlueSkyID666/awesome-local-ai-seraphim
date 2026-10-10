@@ -1,0 +1,39 @@
+{
+  "id": "tensorfold",
+  "name": "TensorFold",
+  "repository": "https://github.com/ashhart/TensorFold",
+  "description": "Serve supported language models with a native inference engine using Metal or CUDA kernels.",
+  "category": "inference",
+  "use_cases": [
+    "serve-models",
+    "use-local-agents"
+  ],
+  "platforms": [
+    "macos",
+    "linux"
+  ],
+  "hardware": [
+    "apple-silicon",
+    "nvidia-gpu",
+    "dgx-spark"
+  ],
+  "local_mode": "local",
+  "compatibility": [
+    "OpenAI Chat Completions, Completions, and Responses; Anthropic Messages."
+  ],
+  "limitations": [
+    "Model, checkpoint format, and hardware qualification are specific to each release; consult the qualification table.",
+    "Experimental Living Weights modifies checkpoint files; teach a copy and keep the original."
+  ],
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://raw.githubusercontent.com/ashhart/TensorFold/bec00ae6961a43a9ab73c4fa9338c167b3f82851/LICENSE"
+  },
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/ashhart/TensorFold/bec00ae6961a43a9ab73c4fa9338c167b3f82851/README.md",
+      "note": "Upstream description, setup, and documented requirements."
+    }
+  ],
+  "last_reviewed": "2026-10-10"
+}

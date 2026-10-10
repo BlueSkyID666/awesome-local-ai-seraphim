@@ -1,0 +1,37 @@
+{
+  "id": "splash",
+  "name": "Splash",
+  "repository": "https://github.com/incoai/splash",
+  "description": "Serve supported models on Apple Silicon with speculative decoding, Metal kernels, and coding-agent integrations.",
+  "category": "inference",
+  "use_cases": [
+    "serve-models",
+    "use-local-agents",
+    "chat-with-models"
+  ],
+  "platforms": [
+    "macos"
+  ],
+  "hardware": [
+    "apple-silicon"
+  ],
+  "local_mode": "local",
+  "compatibility": [
+    "OpenAI Chat Completions, Responses, and Completions; Anthropic Messages; documented Pi launch command."
+  ],
+  "limitations": [
+    "Requires Apple M3 or newer and macOS 26.4 or newer; memory requirements depend on model and quantization.",
+    "Model and draft downloads need network access on first use."
+  ],
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://raw.githubusercontent.com/incoai/splash/8a2b42069923d483151372b615f6182c72c2b6cd/LICENSE"
+  },
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/incoai/splash/8a2b42069923d483151372b615f6182c72c2b6cd/README.md",
+      "note": "Upstream description, setup, and documented requirements."
+    }
+  ],
+  "last_reviewed": "2026-10-10"
+}

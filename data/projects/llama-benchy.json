@@ -1,0 +1,30 @@
+{
+  "id": "llama-benchy",
+  "name": "llama-benchy",
+  "repository": "https://github.com/eugr/llama-benchy",
+  "description": "Measure prompt-processing and token-generation speed at different context depths through a model server's API.",
+  "category": "evaluation",
+  "use_cases": [
+    "benchmark-serving"
+  ],
+  "platforms": [],
+  "hardware": [],
+  "local_mode": "local-client",
+  "compatibility": [
+    "OpenAI-compatible /v1/chat/completions endpoints."
+  ],
+  "limitations": [
+    "Measures serving performance, not tool-calling correctness or complete coding-agent quality."
+  ],
+  "license": {
+    "spdx": "MIT",
+    "url": "https://raw.githubusercontent.com/eugr/llama-benchy/e9be344578cec17745066b220798b80a0d2686d3/LICENSE"
+  },
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/eugr/llama-benchy/e9be344578cec17745066b220798b80a0d2686d3/README.md",
+      "note": "Upstream description, setup, and documented requirements."
+    }
+  ],
+  "last_reviewed": "2026-10-10"
+}

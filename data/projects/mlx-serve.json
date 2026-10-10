@@ -1,0 +1,36 @@
+{
+  "id": "mlx-serve",
+  "name": "mlx-serve",
+  "repository": "https://github.com/ddalcu/mlx-serve",
+  "description": "Serve MLX and GGUF models on Apple Silicon through a native server with a companion model-management and chat app.",
+  "category": "inference",
+  "use_cases": [
+    "serve-models",
+    "use-local-agents",
+    "chat-with-models"
+  ],
+  "platforms": [
+    "macos"
+  ],
+  "hardware": [
+    "apple-silicon"
+  ],
+  "local_mode": "local",
+  "compatibility": [
+    "OpenAI- and Anthropic-compatible HTTP APIs; companion app with agent mode and MCP tools."
+  ],
+  "limitations": [
+    "Requires macOS 26.2 or newer; confirm the selected model and modality against upstream documentation."
+  ],
+  "license": {
+    "spdx": "MIT",
+    "url": "https://raw.githubusercontent.com/ddalcu/mlx-serve/1b00c65a3cdf4a60a6e64709e150b75d4ecd8b02/LICENSE"
+  },
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/ddalcu/mlx-serve/1b00c65a3cdf4a60a6e64709e150b75d4ecd8b02/README.md",
+      "note": "Upstream description, setup, and documented requirements."
+    }
+  ],
+  "last_reviewed": "2026-10-10"
+}

@@ -1,0 +1,35 @@
+{
+  "id": "spark-doctor",
+  "name": "Spark Doctor",
+  "repository": "https://github.com/joeynyc/spark-doctor",
+  "description": "Collect DGX Spark diagnostics and explain likely system, runtime, network, and recipe problems from local evidence.",
+  "category": "monitoring",
+  "use_cases": [
+    "diagnose-systems"
+  ],
+  "platforms": [
+    "linux"
+  ],
+  "hardware": [
+    "dgx-spark"
+  ],
+  "local_mode": "local",
+  "compatibility": [
+    "DGX Spark system and Docker diagnostics; JSON and Markdown reports."
+  ],
+  "limitations": [
+    "Read-only diagnostics, not automatic repairs; requires Python 3.11 or newer.",
+    "Review and anonymize diagnostic reports before sharing them."
+  ],
+  "license": {
+    "spdx": "MIT",
+    "url": "https://raw.githubusercontent.com/joeynyc/spark-doctor/e50a14faf5fed4a9f202663451db92da34979298/LICENSE"
+  },
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/joeynyc/spark-doctor/e50a14faf5fed4a9f202663451db92da34979298/README.md",
+      "note": "Upstream description, setup, and documented requirements."
+    }
+  ],
+  "last_reviewed": "2026-10-10"
+}

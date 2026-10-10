@@ -1,0 +1,6 @@
+[files]
+extend-exclude = ["LICENSE", "scripts/LICENSE", "lychee/", ".catalog-links.txt"]
+
+[default.extend-words]
+Strix = "Strix"
+Niko = "Niko"

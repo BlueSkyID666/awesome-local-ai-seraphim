@@ -1,0 +1,46 @@
+{
+  "id": "dwarfstar",
+  "name": "DwarfStar / ds4",
+  "repository": "https://github.com/antirez/ds4",
+  "description": "Run a focused native inference engine and coding agent for selected large models on consumer hardware.",
+  "category": "inference",
+  "use_cases": [
+    "serve-models",
+    "use-local-agents",
+    "chat-with-models"
+  ],
+  "platforms": [
+    "macos",
+    "linux"
+  ],
+  "hardware": [
+    "apple-silicon",
+    "nvidia-gpu",
+    "amd-gpu",
+    "dgx-spark"
+  ],
+  "local_mode": "local",
+  "compatibility": [
+    "Metal, CUDA, and ROCm backends; native coding agent and HTTP server.",
+    "OpenAI-style Chat Completions, Responses, and Completions; Anthropic-style Messages."
+  ],
+  "limitations": [
+    "Beta-quality software with fast-changing model support; uses project-produced GGUF files, not arbitrary GGUF models.",
+    "Metal primarily targets Macs with 96 GB or more; smaller machines and larger models may need SSD streaming."
+  ],
+  "license": {
+    "spdx": "MIT",
+    "url": "https://raw.githubusercontent.com/antirez/ds4/fc80bd695da76ee14bcb86820bf900a5cdfda806/LICENSE"
+  },
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/antirez/ds4/fc80bd695da76ee14bcb86820bf900a5cdfda806/README.md",
+      "note": "Upstream description, setup, and documented requirements."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/antirez/ds4/fc80bd695da76ee14bcb86820bf900a5cdfda806/docs/SERVER.md",
+      "note": "Documents serving endpoints, streaming, tool calls, and session limits."
+    }
+  ],
+  "last_reviewed": "2026-10-10"
+}

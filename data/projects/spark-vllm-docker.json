@@ -1,0 +1,35 @@
+{
+  "id": "spark-vllm-docker",
+  "name": "spark-vllm-docker",
+  "repository": "https://github.com/eugr/spark-vllm-docker",
+  "description": "Run vLLM in Docker on one or more DGX Spark systems with networking and distributed-inference setup scripts.",
+  "category": "deployment",
+  "use_cases": [
+    "serve-models",
+    "manage-clusters"
+  ],
+  "platforms": [
+    "linux"
+  ],
+  "hardware": [
+    "dgx-spark"
+  ],
+  "local_mode": "local",
+  "compatibility": [
+    "vLLM; Ray or native PyTorch distributed execution; NCCL/RDMA."
+  ],
+  "limitations": [
+    "Targets DGX Spark; multi-node operation depends on compatible networking and model configuration."
+  ],
+  "license": {
+    "spdx": "MIT",
+    "url": "https://raw.githubusercontent.com/eugr/spark-vllm-docker/a4c172976a5f9f8669b356a0891bf972cae14fd4/LICENSE"
+  },
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/eugr/spark-vllm-docker/a4c172976a5f9f8669b356a0891bf972cae14fd4/README.md",
+      "note": "Upstream description, setup, and documented requirements."
+    }
+  ],
+  "last_reviewed": "2026-10-10"
+}

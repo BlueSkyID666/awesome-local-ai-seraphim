@@ -1,0 +1,28 @@
+{
+  "id": "example-project",
+  "name": "Example Project",
+  "repository": "https://github.com/example/project",
+  "description": "Replace this summary with what the project does for a local AI workflow.",
+  "category": "inference",
+  "use_cases": [
+    "serve-models"
+  ],
+  "platforms": [],
+  "hardware": [],
+  "local_mode": "local",
+  "compatibility": [],
+  "limitations": [
+    "Replace this example with documented requirements or limitations."
+  ],
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/example/project/blob/HEAD/LICENSE"
+  },
+  "sources": [
+    {
+      "url": "https://github.com/example/project/blob/HEAD/README.md",
+      "note": "Replace this URL and note with evidence for the entry's claims."
+    }
+  ],
+  "last_reviewed": "2026-01-01"
+}

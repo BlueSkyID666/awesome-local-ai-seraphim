@@ -1,0 +1,46 @@
+{
+  "categories": {
+    "inference": "Inference and serving",
+    "deployment": "Deployment and bootstrapping",
+    "clustering": "Clustering and interconnects",
+    "systems": "Systems",
+    "harnesses": "Agent harnesses",
+    "evaluation": "Evaluation and benchmarking",
+    "monitoring": "Monitoring and diagnostics",
+    "applications": "Applications and model management",
+    "skills": "Agent skills and extensions",
+    "mcp": "MCP servers"
+  },
+  "use_cases": {
+    "serve-models": "Run a model on my hardware",
+    "use-local-agents": "Connect a coding agent to a local model",
+    "evaluate-tool-calling": "Test tool-calling quality",
+    "benchmark-serving": "Compare inference speed",
+    "manage-clusters": "Deploy or manage a cluster",
+    "bootstrap-local-ai": "Set up local AI",
+    "monitor-systems": "Monitor my setup",
+    "diagnose-systems": "Troubleshoot my setup",
+    "chat-with-models": "Chat with a local model",
+    "extend-agents": "Add skills, extensions, or MCP tools",
+    "manage-cloud": "Use optional cloud integrations"
+  },
+  "platforms": {
+    "linux": "Linux",
+    "macos": "macOS",
+    "windows": "Windows",
+    "ios": "iOS",
+    "ipados": "iPadOS"
+  },
+  "hardware": {
+    "apple-silicon": "Apple Silicon",
+    "nvidia-gpu": "NVIDIA GPU",
+    "amd-gpu": "AMD GPU",
+    "dgx-spark": "DGX Spark / GB10",
+    "cpu": "CPU"
+  },
+  "local_modes": {
+    "local": "Local workload",
+    "local-client": "Local client or agent",
+    "cloud-dependent": "Cloud integration"
+  }
+}

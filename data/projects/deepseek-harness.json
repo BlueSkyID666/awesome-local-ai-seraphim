@@ -1,0 +1,36 @@
+{
+  "id": "deepseek-harness",
+  "name": "DeepSeek Harness",
+  "repository": "https://github.com/deepseek-ai/deepseek-harness",
+  "description": "Run a plugin-based agent harness with a web UI and configurable model-provider adapters.",
+  "category": "harnesses",
+  "use_cases": [
+    "use-local-agents",
+    "extend-agents"
+  ],
+  "platforms": [],
+  "hardware": [],
+  "local_mode": "local-client",
+  "compatibility": [
+    "Custom self-hosted model APIs using OpenAI Chat Completions, Responses, or Anthropic Messages."
+  ],
+  "limitations": [
+    "Developer preview with compatibility-breaking changes; review the upstream safety notice.",
+    "Self-hosted endpoints may need explicit request-compatibility settings; protocol support is not full feature certification."
+  ],
+  "license": {
+    "spdx": "MIT",
+    "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/d743267388641bc76f17c45ce8b4c231aed1d32c/LICENSE"
+  },
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/d743267388641bc76f17c45ce8b4c231aed1d32c/README.md",
+      "note": "Upstream description, setup, and documented requirements."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/d743267388641bc76f17c45ce8b4c231aed1d32c/docs/user/guide/providers.md",
+      "note": "Documents self-hosted custom model APIs and request-compatibility settings."
+    }
+  ],
+  "last_reviewed": "2026-10-10"
+}

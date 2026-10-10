@@ -1,0 +1,37 @@
+{
+  "id": "omlx",
+  "name": "oMLX",
+  "repository": "https://github.com/jundot/omlx",
+  "description": "Serve local MLX models with continuous batching, tiered memory/SSD caching, and menu-bar management.",
+  "category": "inference",
+  "use_cases": [
+    "serve-models",
+    "use-local-agents",
+    "chat-with-models"
+  ],
+  "platforms": [
+    "macos"
+  ],
+  "hardware": [
+    "apple-silicon"
+  ],
+  "local_mode": "local",
+  "compatibility": [
+    "MLX model serving; optional MCP support."
+  ],
+  "limitations": [
+    "Requires Apple Silicon and macOS 15 or newer; source installs require Python 3.11-3.13.",
+    "Some model families require custom Metal kernels; use the packaged app or follow the full Xcode build requirements."
+  ],
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://raw.githubusercontent.com/jundot/omlx/013bc3f3a48fa9a4b7dffbfeb6cdc7c1face1c5d/LICENSE"
+  },
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/jundot/omlx/013bc3f3a48fa9a4b7dffbfeb6cdc7c1face1c5d/README.md",
+      "note": "Upstream description, setup, and documented requirements."
+    }
+  ],
+  "last_reviewed": "2026-10-10"
+}

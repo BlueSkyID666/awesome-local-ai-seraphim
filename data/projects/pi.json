@@ -1,0 +1,39 @@
+{
+  "id": "pi",
+  "name": "Pi",
+  "repository": "https://github.com/earendil-works/pi",
+  "description": "Use an extensible coding-agent harness with local model connections, skills, extensions, and automation interfaces.",
+  "category": "harnesses",
+  "use_cases": [
+    "use-local-agents",
+    "extend-agents"
+  ],
+  "platforms": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "hardware": [],
+  "local_mode": "local-client",
+  "compatibility": [
+    "llama.cpp router; custom OpenAI-, Anthropic-, or Google-compatible endpoints; skills and extensions."
+  ],
+  "limitations": [
+    "Local inference needs a separate model server; endpoint-specific behavior may need configuration."
+  ],
+  "license": {
+    "spdx": "MIT",
+    "url": "https://raw.githubusercontent.com/earendil-works/pi/4ac0bd8c7b96d72cb6a73226edc7c9ecaae1d14e/LICENSE"
+  },
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/earendil-works/pi/4ac0bd8c7b96d72cb6a73226edc7c9ecaae1d14e/README.md",
+      "note": "Upstream description, setup, and documented requirements."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/earendil-works/pi/4ac0bd8c7b96d72cb6a73226edc7c9ecaae1d14e/packages/coding-agent/docs/models.md",
+      "note": "Documents local models and custom compatible endpoints."
+    }
+  ],
+  "last_reviewed": "2026-10-10"
+}

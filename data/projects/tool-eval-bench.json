@@ -1,0 +1,33 @@
+{
+  "id": "tool-eval-bench",
+  "name": "tool-eval-bench",
+  "repository": "https://github.com/SeraphimSerapis/tool-eval-bench",
+  "description": "Evaluate tool-calling quality and benchmark self-hosted model endpoints with deterministic scenarios and conversation traces.",
+  "category": "evaluation",
+  "use_cases": [
+    "evaluate-tool-calling",
+    "benchmark-serving"
+  ],
+  "platforms": [],
+  "hardware": [],
+  "local_mode": "local-client",
+  "compatibility": [
+    "OpenAI-compatible Chat Completions endpoints; additional hosted-provider adapters.",
+    "Python 3.11 or newer; optional Docker deployment."
+  ],
+  "limitations": [
+    "Tests assistant conversations with mock tools, not full agent systems or multi-agent handoffs.",
+    "Difficulty tiers are author estimates; localization coverage is German-focused."
+  ],
+  "license": {
+    "spdx": "MIT",
+    "url": "https://raw.githubusercontent.com/SeraphimSerapis/tool-eval-bench/b60e2f00f6c44352a3680356e7c7948f777c5280/LICENSE"
+  },
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/SeraphimSerapis/tool-eval-bench/b60e2f00f6c44352a3680356e7c7948f777c5280/README.md",
+      "note": "Upstream description, setup, and documented requirements."
+    }
+  ],
+  "last_reviewed": "2026-10-10"
+}

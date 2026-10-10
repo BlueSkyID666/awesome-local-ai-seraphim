@@ -1,0 +1,35 @@
+{
+  "id": "oh-my-pi",
+  "name": "Oh My Pi",
+  "repository": "https://github.com/can1357/oh-my-pi",
+  "description": "Use a coding-agent harness with IDE-oriented tools and configurable local model providers.",
+  "category": "harnesses",
+  "use_cases": [
+    "use-local-agents",
+    "extend-agents"
+  ],
+  "platforms": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "hardware": [],
+  "local_mode": "local-client",
+  "compatibility": [
+    "Local Ollama, LM Studio, llama.cpp, and vLLM endpoints; custom OpenAI-compatible providers."
+  ],
+  "limitations": [
+    "A local provider still needs a separately running model server and model-specific capability checks."
+  ],
+  "license": {
+    "spdx": "MIT",
+    "url": "https://raw.githubusercontent.com/can1357/oh-my-pi/5063baf59ec68ad3f2bff060a3ba44b0547eee15/LICENSE"
+  },
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/can1357/oh-my-pi/5063baf59ec68ad3f2bff060a3ba44b0547eee15/README.md",
+      "note": "Upstream description, setup, and documented requirements."
+    }
+  ],
+  "last_reviewed": "2026-10-10"
+}

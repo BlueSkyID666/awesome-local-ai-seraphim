@@ -1,0 +1,39 @@
+{
+  "id": "strata",
+  "name": "Strata",
+  "repository": "https://github.com/Niko1221/Strata",
+  "description": "Run supported Qwen models on Windows or Linux PCs with NVIDIA or AMD GPUs, with a local UI and model APIs.",
+  "category": "inference",
+  "use_cases": [
+    "serve-models",
+    "use-local-agents",
+    "chat-with-models"
+  ],
+  "platforms": [
+    "windows",
+    "linux"
+  ],
+  "hardware": [
+    "nvidia-gpu",
+    "amd-gpu"
+  ],
+  "local_mode": "local",
+  "compatibility": [
+    "OpenAI-compatible API, Anthropic Messages, OpenAI Responses, and a setup MCP server."
+  ],
+  "limitations": [
+    "The standard setup requires a supported GPU with at least 12 GB VRAM, at least 32 GB RAM, and about 80 GB free disk.",
+    "Model support is specific; experimental hardware paths and AMD vision support have additional limits."
+  ],
+  "license": {
+    "spdx": "MIT",
+    "url": "https://raw.githubusercontent.com/Niko1221/Strata/61b3fb5dd3f1e8ec09cf7e4e05208bc6d3c46406/LICENSE"
+  },
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/Niko1221/Strata/61b3fb5dd3f1e8ec09cf7e4e05208bc6d3c46406/README.md",
+      "note": "Upstream description, setup, and documented requirements."
+    }
+  ],
+  "last_reviewed": "2026-10-10"
+}

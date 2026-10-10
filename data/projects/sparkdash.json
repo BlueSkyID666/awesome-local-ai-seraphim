@@ -1,0 +1,36 @@
+{
+  "id": "sparkdash",
+  "name": "SparkDash",
+  "repository": "https://github.com/MiaAI-Lab/sparkDash",
+  "description": "Monitor GPU, memory, network, and local model metrics across DGX Spark and other hosts in a web dashboard.",
+  "category": "monitoring",
+  "use_cases": [
+    "monitor-systems"
+  ],
+  "platforms": [
+    "linux"
+  ],
+  "hardware": [
+    "dgx-spark",
+    "nvidia-gpu"
+  ],
+  "local_mode": "local",
+  "compatibility": [
+    "SSH collectors for Linux, macOS, and Windows hosts; HTTP probes for local model servers."
+  ],
+  "limitations": [
+    "The dashboard runs on Linux; monitored hosts may use other operating systems.",
+    "Remote monitoring needs SSH access; review authentication before exposing the dashboard."
+  ],
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://raw.githubusercontent.com/MiaAI-Lab/sparkDash/1403c1ce79db030645c4787ca3b78529c9ea6b5b/LICENSE"
+  },
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/MiaAI-Lab/sparkDash/1403c1ce79db030645c4787ca3b78529c9ea6b5b/README.md",
+      "note": "Upstream description, setup, and documented requirements."
+    }
+  ],
+  "last_reviewed": "2026-10-10"
+}
