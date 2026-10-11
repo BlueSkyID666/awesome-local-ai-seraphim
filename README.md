@@ -42,8 +42,8 @@ inactivity does not prove abandonment. See [maintenance](docs/maintenance.md).
 | --- | --- |
 | Run a model on my hardware | [boots / ai-bootstrap](https://github.com/kindlingai/boots), [DwarfStar / ds4](https://github.com/antirez/ds4), [mentat](https://github.com/kindlingai/mentat), [mlx-serve](https://github.com/ddalcu/mlx-serve), [oMLX](https://github.com/jundot/omlx), [spark-vllm-docker](https://github.com/eugr/spark-vllm-docker), [SparkPilot](https://github.com/ashhart/SparkPilot), [sparkrun](https://github.com/spark-arena/sparkrun), [Splash](https://github.com/incoai/splash), [Strata](https://github.com/Niko1221/Strata), [TandemLLM](https://github.com/0xBakeer/TandemLLM), [TensorFold](https://github.com/ashhart/TensorFold) |
 | Connect a coding agent to a local model | [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness), [DwarfStar / ds4](https://github.com/antirez/ds4), [mlx-serve](https://github.com/ddalcu/mlx-serve), [Oh My Pi](https://github.com/can1357/oh-my-pi), [oMLX](https://github.com/jundot/omlx), [Pi](https://github.com/earendil-works/pi), [Splash](https://github.com/incoai/splash), [Strata](https://github.com/Niko1221/Strata), [TandemLLM](https://github.com/0xBakeer/TandemLLM), [TensorFold](https://github.com/ashhart/TensorFold) |
-| Test tool-calling quality | [Spark Bench](https://github.com/Weschera/spark-bench), [tool-eval-bench](https://github.com/SeraphimSerapis/tool-eval-bench) |
-| Compare inference speed | [llama-benchy](https://github.com/eugr/llama-benchy), [RigMark](https://github.com/alexellis/rigmark), [Spark Bench](https://github.com/Weschera/spark-bench), [Spark Tools](https://github.com/knapcio/spark-tools), [tool-eval-bench](https://github.com/SeraphimSerapis/tool-eval-bench) |
+| Test tool-calling quality | [Inference Atlas](https://github.com/0xBakeer/inference-atlas), [Spark Bench](https://github.com/Weschera/spark-bench), [tool-eval-bench](https://github.com/SeraphimSerapis/tool-eval-bench) |
+| Compare inference speed | [Inference Atlas](https://github.com/0xBakeer/inference-atlas), [llama-benchy](https://github.com/eugr/llama-benchy), [RigMark](https://github.com/alexellis/rigmark), [Spark Bench](https://github.com/Weschera/spark-bench), [Spark Tools](https://github.com/knapcio/spark-tools), [tool-eval-bench](https://github.com/SeraphimSerapis/tool-eval-bench) |
 | Deploy or manage a cluster | [kindling-spark-os](https://github.com/kindlingai/kindling-spark-os), [MCDMA](https://github.com/ashhart/MCDMA), [mentat](https://github.com/kindlingai/mentat), [spark-vllm-docker](https://github.com/eugr/spark-vllm-docker), [sparkrun](https://github.com/spark-arena/sparkrun) |
 | Set up local AI | [boots / ai-bootstrap](https://github.com/kindlingai/boots), [kindling-spark-os](https://github.com/kindlingai/kindling-spark-os), [sparkrun](https://github.com/spark-arena/sparkrun) |
 | Monitor my setup | [SparkDash](https://github.com/MiaAI-Lab/sparkDash) |
@@ -237,6 +237,18 @@ inactivity does not prove abandonment. See [maintenance](docs/maintenance.md).
 <a id="evaluation"></a>
 
 ### Evaluation and benchmarking
+
+- [Inference Atlas](https://github.com/0xBakeer/inference-atlas): Browse community inference measurements and benchmark local model servers with configuration fingerprints, coverage maps, and install recipes.
+  - Local client or agent. Platforms: Not recorded. Hardware: Not recorded.
+  - License: [MIT](https://raw.githubusercontent.com/0xBakeer/inference-atlas/b93f6281f150788d53c05600725b63f8febddd1e/LICENSE). [Metadata and evidence](data/projects/inference-atlas.json).
+  - Documentation reviewed: 2026-10-11. Repository: not checked yet.
+  - Note: Early-stage project; coverage depends on contributed measurements, not universal engine, model, or hardware compatibility.
+  - Note: Benchmarking requires Python 3.11 or newer, a configured inference server, suitable model hardware, and a resolvable GitHub login for provenance.
+  - Note: The terminal UI requires Node.js 20 or newer, git, and pnpm; it browses data and generates recipes rather than serving models.
+  - Note: The terminal UI syncs published data on launch and periodically by default; cached data works offline, or --repo reads a local checkout with compiled data.
+  - Note: Benchmark telemetry samples local hardware by default and can be disabled; submitted results include contributor provenance and become public.
+  - Note: Code-execution grading runs generated code in a subprocess, not a security sandbox; avoid untrusted models on sensitive machines.
+  - Note: Code is MIT licensed; registry and measurement data use CC-BY-4.0, while third-party datasets and model weights retain their own terms.
 
 - [llama-benchy](https://github.com/eugr/llama-benchy): Measure prompt-processing and token-generation speed at different context depths through a model server's API.
   - Local client or agent. Platforms: Not recorded. Hardware: Not recorded.

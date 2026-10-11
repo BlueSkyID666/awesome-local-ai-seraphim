@@ -12,6 +12,7 @@ catalog PR; there is no automatic publishing or merging of these notes.
 - [TandemLLM](https://github.com/0xBakeer/TandemLLM), a Spark-focused inference engine.
 - [Spark Tools](https://github.com/knapcio/spark-tools), inference simulation and validation tools.
 - [Spark Bench](https://github.com/Weschera/spark-bench), model and serving-recipe evaluation.
+- [Inference Atlas](https://github.com/0xBakeer/inference-atlas), community inference measurements, local benchmarking, and terminal install recipes.
 - [DGX Spark Fan Control](https://github.com/christopherowen/dgx-spark-fan-control), minimum fan-speed floors and performance curves.
 - [DGX Spark Memory Saver](https://github.com/christopherowen/dgx-spark-memory-saver), a version-qualified UVM allocation patch.
 - Weekly repository observations with check dates, last-push dates, and archived/disabled flags.
