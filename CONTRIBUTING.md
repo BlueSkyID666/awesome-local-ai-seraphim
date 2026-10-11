@@ -36,7 +36,11 @@ Listings are not endorsements, security audits, or runtime certifications.
    repository URL. Pick IDs from [`data/taxonomy.json`](data/taxonomy.json).
 3. Read the upstream documentation. Include source URLs and a note explaining
    what each source supports. Record the date you actually reviewed those sources.
-4. Run these commands with Python 3.11 or newer:
+4. Add a short note to the current Monday-starting UTC week in
+   [`CHANGELOG.md`](CHANGELOG.md), under Added, Updated, or Removed. Create the
+   week's `## Week of YYYY-MM-DD` heading at the top when needed. Describe catalog
+   changes, not upstream releases; explain removals. Omit empty subsections.
+5. Run these commands with Python 3.11 or newer:
 
    ```sh
    python3 scripts/catalog.py validate
@@ -45,7 +49,7 @@ Listings are not endorsements, security audits, or runtime certifications.
    python3 -m unittest discover -s scripts -p 'test_*.py'
    ```
 
-5. Open a PR with the record and generated README changes. Explain the use case,
+6. Open a PR with the record, changelog, and generated README changes. Explain the use case,
    evidence, and any limits in the PR template. Flag ownership or affiliation.
 
 The scripts use only Python's standard library. The format reference is in
@@ -91,6 +95,21 @@ After the first GitHub CI run, protect `main` and require PR review plus the
 catalog and documentation checks before merge. Configure those rules in GitHub;
 workflow files alone do not prevent merging a failed PR. Keep the upstream link
 check advisory on PRs.
+
+## Review dates and repository observations
+
+Set `last_reviewed` only after reading the cited upstream sources. A repository
+check or recent push is not a documentation review. Automated observations live
+in `data/health.json`, not in project records; contributors adding an entry do
+not need to fetch or edit that snapshot.
+
+The weekly health workflow proposes snapshot and README updates in a PR. Review
+unavailable, archived, disabled, and redirected repositories before merging.
+Investigate failed checks instead of treating them as deletion or abandonment.
+If an entry needs a correction or removal, make a separate reviewed catalog
+change with evidence and a changelog note. Routine health-only PRs do not need
+changelog notes. See [maintenance](docs/maintenance.md) for fields, local refresh
+commands, and workflow permissions.
 
 ## Contributor licensing
 

@@ -25,12 +25,16 @@ cannot silently disappear from the generated output.
 | `limitations` | Requirements or caveats that change suitability, including preview status, model limits, telemetry, and permissions. |
 | `license` | Object with `spdx` and `url`. Use an SPDX identifier or simple AND/OR expression and link to the license or package declaration. |
 | `sources` | Nonempty array of objects with `url` and `note`. Explain what each upstream source supports. |
-| `last_reviewed` | Date someone reviewed the cited documentation, in `YYYY-MM-DD` form. Not a runtime test date. |
+| `last_reviewed` | Date someone reviewed the cited documentation, in `YYYY-MM-DD` form. Shown in the README; not a runtime test or automated repository-check date. |
 
 Strings must be single-line text without surrounding whitespace. Arrays cannot
 contain duplicates. Names and repository URLs are unique without regard to case.
 Documentation links must use HTTPS without embedded credentials or custom ports.
 Dates cannot be in the future.
+
+Repository observations are stored separately in `data/health.json`; see
+[maintenance](maintenance.md). Do not add activity dates, health statuses, or
+maintenance scores to a project record.
 
 An empty `platforms`, `hardware`, or `compatibility` array means **not recorded**,
 not universal support or absence of requirements. Recorded tags are not an
