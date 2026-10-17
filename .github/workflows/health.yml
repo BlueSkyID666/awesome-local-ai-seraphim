@@ -64,7 +64,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           run_id="$(gh api --method POST "repos/$GITHUB_REPOSITORY/actions/workflows/checks.yml/dispatches" \
-            -f ref=automation/catalog-health --jq '.workflow_run_id')"
+            -f ref=automation/catalog-health -F return_run_details=true --jq '.workflow_run_id')"
           [[ "$run_id" =~ ^[0-9]+$ ]] || { echo "Missing CI run ID; leaving PR for review."; exit 1; }
           gh run watch "$run_id" --exit-status --interval 10
           HEALTH_CI_RUN_ID="$run_id" python scripts/merge_health.py
