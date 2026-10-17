@@ -14,6 +14,7 @@
   "use_cases": {
     "serve-models": "Run a model on my hardware",
     "use-local-agents": "Connect a coding agent to a local model",
+    "run-local-agents": "Run autonomous agents with local models",
     "evaluate-tool-calling": "Test tool-calling quality",
     "benchmark-serving": "Compare inference speed",
     "manage-clusters": "Deploy or manage a cluster",
