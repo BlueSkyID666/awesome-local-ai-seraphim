@@ -4,6 +4,16 @@ Changes to Awesome Local AI, not upstream software releases. Weeks start on
 Monday in UTC. Contributors update the current week's section with their
 catalog PR; there is no automatic publishing or merging of these notes.
 
+## Week of 2026-10-12
+
+### Added
+
+- [Contemplative Agent](https://github.com/shimo4228/contemplative-agent), an autonomous agent on a local Ollama model with a human approval gate for changes to its prompts.
+
+### Updated
+
+- Task-based browsing now distinguishes autonomous agents from coding agents.
+
 ## Week of 2026-10-05
 
 ### Added
