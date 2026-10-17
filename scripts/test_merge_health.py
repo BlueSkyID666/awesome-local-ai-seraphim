@@ -70,8 +70,8 @@ class MergePolicyTests(unittest.TestCase):
             with self.subTest(pr=pr), self.assertRaises(catalog.CatalogError):
                 merge_health.validate_pr(pr, self.sha, self.repository, "main")
 
-    def run_main(self, *, stale_base=False, moved_head=False, extra_jobs=False, unsafe_content=False):
-        event = {"workflow_run": {"id": 123}, "repository": {"default_branch": "main"}}
+    def run_main(self, *, stale_base=False, moved_head=False, extra_jobs=False, unsafe_content=False, run_id="123"):
+        event = {"repository": {"default_branch": "main"}}
         jobs = {"total_count": len(self.jobs) + int(extra_jobs), "jobs": self.jobs}
         current_pr = deepcopy(self.pr)
         if moved_head:
@@ -80,7 +80,8 @@ class MergePolicyTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "event.json"
             path.write_text(json.dumps(event), encoding="utf-8")
-            with patch.dict(os.environ, {"GITHUB_REPOSITORY": self.repository, "GITHUB_EVENT_PATH": str(path)}), \
+            with patch.dict(os.environ, {"GITHUB_REPOSITORY": self.repository, "GITHUB_EVENT_PATH": str(path),
+                                         "HEALTH_CI_RUN_ID": run_id}), \
                     patch("merge_health.api", side_effect=responses), \
                     patch("merge_health.validate_content", return_value="base",
                           side_effect=catalog.CatalogError("unsafe content") if unsafe_content else None), \
@@ -94,6 +95,13 @@ class MergePolicyTests(unittest.TestCase):
         self.assertEqual(result, 0)
         self.assertEqual(calls[-1].args, ("gh", "pr", "merge", "4", "--repo", self.repository,
                                          "--merge", "--match-head-commit", self.sha))
+
+    def test_invalid_dispatch_run_id_blocks_before_any_command(self):
+        for run_id in ["", "null", "0", "../other", "123?query"]:
+            with self.subTest(run_id=run_id):
+                result, calls = self.run_main(run_id=run_id)
+                self.assertEqual(result, 1)
+                self.assertEqual(calls, [])
 
     def test_main_never_merges_when_base_or_head_moves_or_jobs_are_truncated(self):
         for options in [{"stale_base": True}, {"moved_head": True}, {"extra_jobs": True}, {"unsafe_content": True}]:

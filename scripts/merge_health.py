@@ -96,9 +96,9 @@ def main():
     try:
         event = catalog.read_json(Path(os.environ["GITHUB_EVENT_PATH"]))
         repository = os.environ["GITHUB_REPOSITORY"]
-        run = event["workflow_run"]
-        # Fetch current API state rather than trusting a delayed or rerun event's cached fields.
-        run = api(repository, f'actions/runs/{run["id"]}')
+        run_id = os.environ["HEALTH_CI_RUN_ID"]
+        catalog.require(re.fullmatch(r"[1-9][0-9]*", run_id) is not None, "invalid CI run ID")
+        run = api(repository, f"actions/runs/{run_id}")
         jobs = api(repository, f'actions/runs/{run["id"]}/jobs?filter=latest&per_page=100')
         catalog.require(jobs["total_count"] == len(jobs["jobs"]), "CI job list is incomplete")
         validate_run(run, jobs["jobs"], repository)

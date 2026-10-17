@@ -14,6 +14,7 @@ catalog PR; there is no automatic publishing or merging of these notes.
 
 - Task-based browsing now distinguishes autonomous agents from coding agents.
 - Routine health refreshes can merge after scoped-data and CI checks; flagged snapshots and project submissions still need human review.
+- Health automation waits for its dispatched CI run before merging instead of relying on bot-triggered follow-up events.
 
 ## Week of 2026-10-05
 

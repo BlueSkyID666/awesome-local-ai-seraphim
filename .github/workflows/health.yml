@@ -17,7 +17,7 @@ jobs:
   refresh:
     if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
     permissions:
       contents: write
       pull-requests: write
@@ -58,8 +58,13 @@ jobs:
             No upstream code was installed or run, and no entries were removed.
             Routine refreshes merge after the health safety gate and all catalog CI jobs pass.
             Flagged observations or other changes stay open for manual review.
-      - name: Run catalog CI for the bot branch
+      - name: Run catalog CI and merge a routine refresh
         if: steps.pr.outputs.pull-request-operation == 'created' || steps.pr.outputs.pull-request-operation == 'updated'
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh workflow run checks.yml --ref automation/catalog-health
+        run: |
+          run_id="$(gh api --method POST "repos/$GITHUB_REPOSITORY/actions/workflows/checks.yml/dispatches" \
+            -f ref=automation/catalog-health -F return_run_details=true --jq '.workflow_run_id')"
+          [[ "$run_id" =~ ^[0-9]+$ ]] || { echo "Missing CI run ID; leaving PR for review."; exit 1; }
+          gh run watch "$run_id" --exit-status --interval 10
+          HEALTH_CI_RUN_ID="$run_id" python scripts/merge_health.py
