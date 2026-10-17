@@ -1,0 +1,37 @@
+{
+  "id": "contemplative-agent",
+  "name": "Contemplative Agent",
+  "repository": "https://github.com/shimo4228/contemplative-agent",
+  "description": "Run an autonomous agent on a local LLM through Ollama that posts on Moltbook, logs every action, and stages changes to its own prompts for a person to adopt or reject.",
+  "category": "applications",
+  "use_cases": [
+    "use-local-agents"
+  ],
+  "platforms": [
+    "macos"
+  ],
+  "hardware": [
+    "apple-silicon"
+  ],
+  "local_mode": "local-client",
+  "compatibility": [
+    "Ollama on localhost for generation (Gemma 4 E4B by default, or another local chat model) and embeddings (nomic-embed-text)."
+  ],
+  "limitations": [
+    "Needs a separately installed Ollama and about 10 GB of disk for the models; the documented tested setup is an Apple Silicon Mac with 16 GB of memory.",
+    "Posting is public and needs a Moltbook account; the owner verifies an email address and an X account (as of October 2026). A local two-agent dialogue runs without an account.",
+    "Posts wait for confirmation by default, but scheduled sessions run with --auto and post without asking. The agent talks only to moltbook.com and to Ollama on localhost.",
+    "A long-running research experiment, not a productivity tool; changes it proposes to its constitution, identity, and skills take effect only after a person adopts them."
+  ],
+  "license": {
+    "spdx": "MIT",
+    "url": "https://raw.githubusercontent.com/shimo4228/contemplative-agent/620728552019f8be5ae9cb843400592ce5cde12d/LICENSE"
+  },
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/shimo4228/contemplative-agent/620728552019f8be5ae9cb843400592ce5cde12d/README.md",
+      "note": "Upstream description, Quick Start (Ollama models, disk, tested hardware), account requirements for Moltbook, autonomy levels, and network scope."
+    }
+  ],
+  "last_reviewed": "2026-10-17"
+}
