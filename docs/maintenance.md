@@ -69,9 +69,9 @@ inherit unrelated observations.
 [`health.yml`](../.github/workflows/health.yml) runs on Mondays at 07:43 UTC or by
 manual dispatch on the default branch. Scheduled runs can be delayed by GitHub.
 It uses pinned actions and proposes only `data/health.json` and the generated
-README on `automation/catalog-health`. It opens or updates a PR; it never
-auto-merges, removes entries, or edits `last_reviewed`. The existing weekly
-upstream-link check remains separate.
+README on `automation/catalog-health`. It opens or updates a PR and dispatches
+catalog CI. It never removes entries or edits `last_reviewed`. The existing
+weekly upstream-link check remains separate.
 
 The bot uses `GITHUB_TOKEN` with contents and pull-request write permissions to
 publish its branch and PR. Repository/organization settings must permit Actions
@@ -80,6 +80,33 @@ against the bot branch, because `GITHUB_TOKEN`-created PRs do not automatically
 trigger ordinary PR workflows. No personal token is required. Enable required
 reviews and checks through GitHub branch protection; workflows alone do not
 enforce review.
+
+### Automatic merging of routine refreshes
+
+After catalog CI completes, [health-merge.yml](../.github/workflows/health-merge.yml)
+runs the merge gate from the default branch. It merges only when:
+
+- The PR belongs to `github-actions[bot]`, targets the default branch, and uses
+  `automation/catalog-health` in this repository, not a fork.
+- All four catalog, documentation, and upstream-link CI jobs passed on the exact
+  PR head commit. Missing, skipped, pending, or failed jobs block merging.
+- The head includes the current default branch and changes only `data/health.json`
+  and the generated README. The README must exactly match regeneration from the
+  trusted default-branch code, catalog, and manual README sections.
+- The snapshot covers every catalog entry with a successful check dated today in
+  UTC, no archived or disabled repositories, and no redirects.
+
+The gate reads candidate files as data; it never checks out or runs code from
+the bot branch. It checks the head again before merging and pins the merge to
+the tested commit. If the base or head advances, the refresh needs another run.
+Flagged snapshots and unexpected changes stay open for manual review; the gate
+reports the reason in its workflow log. Failed CI leaves the merge job skipped.
+
+The merge uses the normal GitHub merge operation, without administrator bypass,
+automatic approval, or changes to branch protection. Required reviews still need
+a person. GitHub's repository-wide native auto-merge setting is not needed.
+Merges made with `GITHUB_TOKEN` do not trigger another push workflow; verification
+comes from the catalog CI run before merging. Project submissions remain manual.
 
 Review flagged repositories and failed checks before accepting a snapshot.
 Corrections or removals need a separate catalog change with upstream evidence and
