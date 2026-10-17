@@ -76,15 +76,17 @@ weekly upstream-link check remains separate.
 The bot uses `GITHUB_TOKEN` with contents and pull-request write permissions to
 publish its branch and PR. Repository/organization settings must permit Actions
 to create pull requests. Its actions-write permission dispatches `checks.yml`
-against the bot branch, because `GITHUB_TOKEN`-created PRs do not automatically
-trigger ordinary PR workflows. No personal token is required. Enable required
+against the bot branch. `GITHUB_TOKEN`-created PRs trigger ordinary PR workflows
+in an approval-required state; the explicit dispatch runs CI without that prompt.
+No personal token is required. Enable required
 reviews and checks through GitHub branch protection; workflows alone do not
 enforce review.
 
 ### Automatic merging of routine refreshes
 
-After catalog CI completes, [health-merge.yml](../.github/workflows/health-merge.yml)
-runs the merge gate from the default branch. It merges only when:
+The default-branch health workflow waits for the exact CI run ID returned by the
+dispatch API, then runs the merge gate. It does not rely on `workflow_run` events,
+which GitHub suppresses for bot-triggered activity. It merges only when:
 
 - The PR belongs to `github-actions[bot]`, targets the default branch, and uses
   `automation/catalog-health` in this repository, not a fork.
@@ -100,7 +102,8 @@ The gate reads candidate files as data; it never checks out or runs code from
 the bot branch. It checks the head again before merging and pins the merge to
 the tested commit. If the base or head advances, the refresh needs another run.
 Flagged snapshots and unexpected changes stay open for manual review; the gate
-reports the reason in its workflow log. Failed CI leaves the merge job skipped.
+reports the reason in its workflow log. Failed CI or a timeout stops the workflow
+before it invokes the merge gate.
 
 The merge uses the normal GitHub merge operation, without administrator bypass,
 automatic approval, or changes to branch protection. Required reviews still need
