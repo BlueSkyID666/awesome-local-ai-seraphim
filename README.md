@@ -402,9 +402,11 @@ for review criteria and local lint commands.
 
 A separate weekly [health workflow](.github/workflows/health.yml) opens or updates
 a reviewable PR for repository observations. It does not change documentation
-review dates, remove projects, or auto-merge. Contributors record catalog changes
-in the [weekly changelog](CHANGELOG.md); routine health snapshots are not new
-catalog entries or upstream release notes.
+review dates or remove projects. Routine health refreshes can merge automatically
+after the [health safety gate](docs/maintenance.md#automatic-merging-of-routine-refreshes)
+and CI pass; flagged refreshes and project submissions need human review.
+Contributors record catalog changes in the [weekly changelog](CHANGELOG.md);
+routine health snapshots are not new catalog entries or upstream release notes.
 
 ## License
 

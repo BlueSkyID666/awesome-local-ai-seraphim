@@ -41,5 +41,6 @@ Run `python3 scripts/catalog.py render` after changing data. Before handoff, run
 the contribution guide that were not run. Keep manual README edits outside the
 `catalog:start` / `catalog:end` markers.
 
-Never auto-merge submissions or treat a green CI result as a factual, security,
-privacy, or runtime endorsement.
+Project submissions require human review. Only routine health refreshes may
+auto-merge under the gate in `docs/maintenance.md`; flagged snapshots stay manual.
+A green CI result is not a factual, security, privacy, or runtime endorsement.

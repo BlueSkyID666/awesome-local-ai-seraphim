@@ -103,8 +103,9 @@ check or recent push is not a documentation review. Automated observations live
 in `data/health.json`, not in project records; contributors adding an entry do
 not need to fetch or edit that snapshot.
 
-The weekly health workflow proposes snapshot and README updates in a PR. Review
-unavailable, archived, disabled, and redirected repositories before merging.
+The weekly health workflow proposes snapshot and README updates in a PR. Routine
+refreshes can merge automatically under the [health safety gate](docs/maintenance.md#automatic-merging-of-routine-refreshes).
+Review unavailable, archived, disabled, and redirected repositories before merging.
 Investigate failed checks instead of treating them as deletion or abandonment.
 If an entry needs a correction or removal, make a separate reviewed catalog
 change with evidence and a changelog note. Routine health-only PRs do not need

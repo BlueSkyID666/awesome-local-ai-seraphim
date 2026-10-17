@@ -13,6 +13,7 @@ catalog PR; there is no automatic publishing or merging of these notes.
 ### Updated
 
 - Task-based browsing now distinguishes autonomous agents from coding agents.
+- Routine health refreshes can merge after scoped-data and CI checks; flagged snapshots and project submissions still need human review.
 
 ## Week of 2026-10-05
 

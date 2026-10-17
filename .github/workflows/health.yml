@@ -56,6 +56,8 @@ jobs:
             Failed checks retain prior observations; they do not establish that a project is gone.
             Documentation-review dates and curated project records are unchanged.
             No upstream code was installed or run, and no entries were removed.
+            Routine refreshes merge after the health safety gate and all catalog CI jobs pass.
+            Flagged observations or other changes stay open for manual review.
       - name: Run catalog CI for the bot branch
         if: steps.pr.outputs.pull-request-operation == 'created' || steps.pr.outputs.pull-request-operation == 'updated'
         env:
