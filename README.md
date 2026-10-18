@@ -40,15 +40,15 @@ inactivity does not prove abandonment. See [maintenance](docs/maintenance.md).
 
 | I want to... | Start here |
 | --- | --- |
-| Run a model on my hardware | [boots / ai-bootstrap](https://github.com/kindlingai/boots), [DwarfStar / ds4](https://github.com/antirez/ds4), [mentat](https://github.com/kindlingai/mentat), [mlx-serve](https://github.com/ddalcu/mlx-serve), [oMLX](https://github.com/jundot/omlx), [spark-vllm-docker](https://github.com/eugr/spark-vllm-docker), [SparkPilot](https://github.com/ashhart/SparkPilot), [sparkrun](https://github.com/spark-arena/sparkrun), [Splash](https://github.com/incoai/splash), [Strata](https://github.com/Niko1221/Strata), [TandemLLM](https://github.com/0xBakeer/TandemLLM), [TensorFold](https://github.com/ashhart/TensorFold) |
+| Run a model on my hardware | [boots / ai-bootstrap](https://github.com/kindlingai/boots), [DwarfStar / ds4](https://github.com/antirez/ds4), [mentat](https://github.com/kindlingai/mentat), [mlx-serve](https://github.com/ddalcu/mlx-serve), [oMLX](https://github.com/jundot/omlx), [spark-vllm-docker](https://github.com/eugr/spark-vllm-docker), [SparkPilot](https://github.com/ashhart/SparkPilot), [sparkrun](https://github.com/spark-arena/sparkrun), [Splash](https://github.com/incoai/splash), [Sqwakie](https://github.com/alexcarney460-hue/walkie), [Strata](https://github.com/Niko1221/Strata), [TandemLLM](https://github.com/0xBakeer/TandemLLM), [TensorFold](https://github.com/ashhart/TensorFold) |
 | Connect a coding agent to a local model | [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness), [DwarfStar / ds4](https://github.com/antirez/ds4), [mlx-serve](https://github.com/ddalcu/mlx-serve), [Oh My Pi](https://github.com/can1357/oh-my-pi), [oMLX](https://github.com/jundot/omlx), [Pi](https://github.com/earendil-works/pi), [Splash](https://github.com/incoai/splash), [Strata](https://github.com/Niko1221/Strata), [TandemLLM](https://github.com/0xBakeer/TandemLLM), [TensorFold](https://github.com/ashhart/TensorFold) |
 | Run autonomous agents with local models | [Contemplative Agent](https://github.com/shimo4228/contemplative-agent) |
 | Test tool-calling quality | [Inference Atlas](https://github.com/0xBakeer/inference-atlas), [Spark Bench](https://github.com/Weschera/spark-bench), [tool-eval-bench](https://github.com/SeraphimSerapis/tool-eval-bench) |
 | Compare inference speed | [Inference Atlas](https://github.com/0xBakeer/inference-atlas), [llama-benchy](https://github.com/eugr/llama-benchy), [RigMark](https://github.com/alexellis/rigmark), [Spark Bench](https://github.com/Weschera/spark-bench), [Spark Tools](https://github.com/knapcio/spark-tools), [tool-eval-bench](https://github.com/SeraphimSerapis/tool-eval-bench) |
-| Deploy or manage a cluster | [kindling-spark-os](https://github.com/kindlingai/kindling-spark-os), [MCDMA](https://github.com/ashhart/MCDMA), [mentat](https://github.com/kindlingai/mentat), [spark-vllm-docker](https://github.com/eugr/spark-vllm-docker), [sparkrun](https://github.com/spark-arena/sparkrun) |
+| Deploy or manage a cluster | [DGX Spark Networking](https://github.com/christopherowen/dgx-spark-networking), [kindling-spark-os](https://github.com/kindlingai/kindling-spark-os), [MCDMA](https://github.com/ashhart/MCDMA), [mentat](https://github.com/kindlingai/mentat), [spark-vllm-docker](https://github.com/eugr/spark-vllm-docker), [sparkrun](https://github.com/spark-arena/sparkrun), [Sqwakie](https://github.com/alexcarney460-hue/walkie) |
 | Set up local AI | [boots / ai-bootstrap](https://github.com/kindlingai/boots), [kindling-spark-os](https://github.com/kindlingai/kindling-spark-os), [sparkrun](https://github.com/spark-arena/sparkrun) |
 | Monitor my setup | [SparkDash](https://github.com/MiaAI-Lab/sparkDash) |
-| Troubleshoot my setup | [Spark Doctor](https://github.com/joeynyc/spark-doctor) |
+| Troubleshoot my setup | [DGX Spark Networking](https://github.com/christopherowen/dgx-spark-networking), [Spark Doctor](https://github.com/joeynyc/spark-doctor) |
 | Tune thermals and memory | [DGX Spark Fan Control](https://github.com/christopherowen/dgx-spark-fan-control), [DGX Spark Memory Saver](https://github.com/christopherowen/dgx-spark-memory-saver) |
 | Validate or simulate inference configurations | [Spark Tools](https://github.com/knapcio/spark-tools) |
 | Chat with a local model | [DwarfStar / ds4](https://github.com/antirez/ds4), [mlx-serve](https://github.com/ddalcu/mlx-serve), [oMLX](https://github.com/jundot/omlx), [Orkas](https://github.com/Orkas-AI/Orkas), [SparkPilot](https://github.com/ashhart/SparkPilot), [Splash](https://github.com/incoai/splash), [Strata](https://github.com/Niko1221/Strata) |
@@ -162,6 +162,16 @@ inactivity does not prove abandonment. See [maintenance](docs/maintenance.md).
 
 ### Clustering and interconnects
 
+- [DGX Spark Networking](https://github.com/christopherowen/dgx-spark-networking): RoCE collectives, patched NCCL profiles, topology discovery, and fabric probes for multi-node DGX Spark inference.
+  - Local workload. Platforms: Linux. Hardware: DGX Spark / GB10.
+  - License: [Apache-2.0](https://raw.githubusercontent.com/christopherowen/dgx-spark-networking/f7fcc1e2937f19b6f4f3539b3fe0e43a51201110/LICENSE). [Metadata and evidence](data/projects/dgx-spark-networking.json).
+  - Documentation reviewed: 2026-10-18. Repository: not checked yet.
+  - Note: Documented node stack includes DGX Spark OS 26.09+, kernel 7.0.0-1019-nvidia with kho=off, driver 580.178.04, ConnectX-7 firmware 28.45.4028, and rdma-core 50.
+  - Note: Needs MTU 9000, static IPv4 per cable stripe, GID index 3, unlimited locked memory, libibverbs headers, and a C compiler. Container recipes require NVIDIA runtime, host networking, RDMA devices, and IPC\_LOCK.
+  - Note: One-shot runtime needs torch, cuda-python, and TileLang 0.1.15+; every NCCL profile requires a rebuilt library with the packaged send-path fence patch to avoid hangs.
+  - Note: No adapter ships for upstream vLLM or SGLang. Switched 2-16-node profiles are configuration paths not qualified on the author's fleet; GPU-initiated transport is not implemented.
+  - Note: Does not configure hosts or supervise serving. Probe and benchmark each fabric before use; collective failures require restarting the rank group.
+
 - [MCDMA](https://github.com/ashhart/MCDMA): Configure and verify RDMA links between supported Mac and Linux hosts for distributed local inference.
   - Local workload. Platforms: macOS, Linux. Hardware: Apple Silicon, DGX Spark / GB10, AMD GPU.
   - License: [Apache-2.0](https://raw.githubusercontent.com/ashhart/MCDMA/3f4f4be02dd9289ccd72b496d723660b5f181ffb/LICENSE). [Metadata and evidence](data/projects/mcdma.json).
@@ -177,6 +187,16 @@ inactivity does not prove abandonment. See [maintenance](docs/maintenance.md).
   - Last observed push: 2026-10-08. Archived: no. Disabled: no.
   - Note: Implements the Ray functionality used by vLLM, not the full Ray API.
   - Note: The Rust workspace declares MIT OR Apache-2.0; no top-level license text was found, so confirm terms for other components.
+
+- [Sqwakie](https://github.com/alexcarney460-hue/walkie): Split one open-weight model across opted-in team machines with llama.cpp RPC and serve an OpenAI-compatible API on localhost; also links Claude Code and Codex agents.
+  - Local workload. Platforms: macOS, Linux. Hardware: Not recorded.
+  - License: [FSL-1.1-ALv2](https://raw.githubusercontent.com/alexcarney460-hue/walkie/89229f3352fba9402eef611ff6cc118c8a801485/LICENSE). [Metadata and evidence](data/projects/sqwakie.json).
+  - Documentation reviewed: 2026-10-17. Repository: not checked yet.
+  - Note: v0.2 pre-release. Sharing is off by default; a person on each machine must turn pooled model runs on.
+  - Note: The README does not document hardware requirements or which llama.cpp backends pooled runs use.
+  - Note: Needs a Sqwakie team: the Free plan covers up to 2 people and 4 machines; larger teams need a paid per-person plan.
+  - Note: Licensing calls home for one-time activation and, on paid plans, a daily renewal check. When no direct path exists, an encrypted relay sees connection metadata such as IP addresses.
+  - Note: Source-available license (FSL-1.1-ALv2), not OSI open source; each version becomes Apache-2.0 two years after release.
 
 <a id="systems"></a>
 
