@@ -40,12 +40,12 @@ inactivity does not prove abandonment. See [maintenance](docs/maintenance.md).
 
 | I want to... | Start here |
 | --- | --- |
-| Run a model on my hardware | [boots / ai-bootstrap](https://github.com/kindlingai/boots), [DwarfStar / ds4](https://github.com/antirez/ds4), [mentat](https://github.com/kindlingai/mentat), [mlx-serve](https://github.com/ddalcu/mlx-serve), [oMLX](https://github.com/jundot/omlx), [spark-vllm-docker](https://github.com/eugr/spark-vllm-docker), [SparkPilot](https://github.com/ashhart/SparkPilot), [sparkrun](https://github.com/spark-arena/sparkrun), [Splash](https://github.com/incoai/splash), [Strata](https://github.com/Niko1221/Strata), [TandemLLM](https://github.com/0xBakeer/TandemLLM), [TensorFold](https://github.com/ashhart/TensorFold) |
+| Run a model on my hardware | [boots / ai-bootstrap](https://github.com/kindlingai/boots), [DwarfStar / ds4](https://github.com/antirez/ds4), [mentat](https://github.com/kindlingai/mentat), [mlx-serve](https://github.com/ddalcu/mlx-serve), [oMLX](https://github.com/jundot/omlx), [spark-vllm-docker](https://github.com/eugr/spark-vllm-docker), [SparkPilot](https://github.com/ashhart/SparkPilot), [sparkrun](https://github.com/spark-arena/sparkrun), [Splash](https://github.com/incoai/splash), [Sqwakie](https://github.com/alexcarney460-hue/walkie), [Strata](https://github.com/Niko1221/Strata), [TandemLLM](https://github.com/0xBakeer/TandemLLM), [TensorFold](https://github.com/ashhart/TensorFold) |
 | Connect a coding agent to a local model | [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness), [DwarfStar / ds4](https://github.com/antirez/ds4), [mlx-serve](https://github.com/ddalcu/mlx-serve), [Oh My Pi](https://github.com/can1357/oh-my-pi), [oMLX](https://github.com/jundot/omlx), [Pi](https://github.com/earendil-works/pi), [Splash](https://github.com/incoai/splash), [Strata](https://github.com/Niko1221/Strata), [TandemLLM](https://github.com/0xBakeer/TandemLLM), [TensorFold](https://github.com/ashhart/TensorFold) |
 | Run autonomous agents with local models | [Contemplative Agent](https://github.com/shimo4228/contemplative-agent) |
 | Test tool-calling quality | [Inference Atlas](https://github.com/0xBakeer/inference-atlas), [Spark Bench](https://github.com/Weschera/spark-bench), [tool-eval-bench](https://github.com/SeraphimSerapis/tool-eval-bench) |
 | Compare inference speed | [Inference Atlas](https://github.com/0xBakeer/inference-atlas), [llama-benchy](https://github.com/eugr/llama-benchy), [RigMark](https://github.com/alexellis/rigmark), [Spark Bench](https://github.com/Weschera/spark-bench), [Spark Tools](https://github.com/knapcio/spark-tools), [tool-eval-bench](https://github.com/SeraphimSerapis/tool-eval-bench) |
-| Deploy or manage a cluster | [kindling-spark-os](https://github.com/kindlingai/kindling-spark-os), [MCDMA](https://github.com/ashhart/MCDMA), [mentat](https://github.com/kindlingai/mentat), [spark-vllm-docker](https://github.com/eugr/spark-vllm-docker), [sparkrun](https://github.com/spark-arena/sparkrun) |
+| Deploy or manage a cluster | [kindling-spark-os](https://github.com/kindlingai/kindling-spark-os), [MCDMA](https://github.com/ashhart/MCDMA), [mentat](https://github.com/kindlingai/mentat), [spark-vllm-docker](https://github.com/eugr/spark-vllm-docker), [sparkrun](https://github.com/spark-arena/sparkrun), [Sqwakie](https://github.com/alexcarney460-hue/walkie) |
 | Set up local AI | [boots / ai-bootstrap](https://github.com/kindlingai/boots), [kindling-spark-os](https://github.com/kindlingai/kindling-spark-os), [sparkrun](https://github.com/spark-arena/sparkrun) |
 | Monitor my setup | [SparkDash](https://github.com/MiaAI-Lab/sparkDash) |
 | Troubleshoot my setup | [Spark Doctor](https://github.com/joeynyc/spark-doctor) |
@@ -177,6 +177,16 @@ inactivity does not prove abandonment. See [maintenance](docs/maintenance.md).
   - Last observed push: 2026-10-08. Archived: no. Disabled: no.
   - Note: Implements the Ray functionality used by vLLM, not the full Ray API.
   - Note: The Rust workspace declares MIT OR Apache-2.0; no top-level license text was found, so confirm terms for other components.
+
+- [Sqwakie](https://github.com/alexcarney460-hue/walkie): Split one open-weight model across opted-in team machines with llama.cpp RPC and serve an OpenAI-compatible API on localhost; also links Claude Code and Codex agents.
+  - Local workload. Platforms: macOS, Linux. Hardware: Not recorded.
+  - License: [FSL-1.1-ALv2](https://raw.githubusercontent.com/alexcarney460-hue/walkie/89229f3352fba9402eef611ff6cc118c8a801485/LICENSE). [Metadata and evidence](data/projects/sqwakie.json).
+  - Documentation reviewed: 2026-10-17. Repository: not checked yet.
+  - Note: v0.2 pre-release. Sharing is off by default; a person on each machine must turn pooled model runs on.
+  - Note: The README does not document hardware requirements or which llama.cpp backends pooled runs use.
+  - Note: Needs a Sqwakie team: the Free plan covers up to 2 people and 4 machines; larger teams need a paid per-person plan.
+  - Note: Licensing calls home for one-time activation and, on paid plans, a daily renewal check. When no direct path exists, an encrypted relay sees connection metadata such as IP addresses.
+  - Note: Source-available license (FSL-1.1-ALv2), not OSI open source; each version becomes Apache-2.0 two years after release.
 
 <a id="systems"></a>
 
