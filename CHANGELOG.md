@@ -9,6 +9,7 @@ catalog PR; there is no automatic publishing or merging of these notes.
 ### Added
 
 - [Contemplative Agent](https://github.com/shimo4228/contemplative-agent), an autonomous agent on a local Ollama model with a human approval gate for changes to its prompts.
+- [Sqwakie](https://github.com/alexcarney460-hue/walkie), pooled llama.cpp RPC runs of one open-weight model across opted-in team machines, with an OpenAI-compatible API on localhost.
 
 ### Updated
 
