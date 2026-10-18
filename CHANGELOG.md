@@ -8,6 +8,7 @@ catalog PR; there is no automatic publishing or merging of these notes.
 
 ### Added
 
+- [Orkas](https://github.com/Orkas-AI/Orkas), a local-first desktop client for coordinating specialist agents with supported providers and compatible local model endpoints.
 - [Contemplative Agent](https://github.com/shimo4228/contemplative-agent), an autonomous agent on a local Ollama model with a human approval gate for changes to its prompts.
 
 ### Updated

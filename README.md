@@ -51,8 +51,8 @@ inactivity does not prove abandonment. See [maintenance](docs/maintenance.md).
 | Troubleshoot my setup | [Spark Doctor](https://github.com/joeynyc/spark-doctor) |
 | Tune thermals and memory | [DGX Spark Fan Control](https://github.com/christopherowen/dgx-spark-fan-control), [DGX Spark Memory Saver](https://github.com/christopherowen/dgx-spark-memory-saver) |
 | Validate or simulate inference configurations | [Spark Tools](https://github.com/knapcio/spark-tools) |
-| Chat with a local model | [DwarfStar / ds4](https://github.com/antirez/ds4), [mlx-serve](https://github.com/ddalcu/mlx-serve), [oMLX](https://github.com/jundot/omlx), [SparkPilot](https://github.com/ashhart/SparkPilot), [Splash](https://github.com/incoai/splash), [Strata](https://github.com/Niko1221/Strata) |
-| Add skills, extensions, or MCP tools | [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness), [gcloud MCP servers](https://github.com/googleapis/gcloud-mcp) (cloud), [Google Agent Skills](https://github.com/google/skills) (cloud), [Matt Pocock's skills](https://github.com/mattpocock/skills), [Oh My Pi](https://github.com/can1357/oh-my-pi), [Pi](https://github.com/earendil-works/pi) |
+| Chat with a local model | [DwarfStar / ds4](https://github.com/antirez/ds4), [mlx-serve](https://github.com/ddalcu/mlx-serve), [oMLX](https://github.com/jundot/omlx), [Orkas](https://github.com/Orkas-AI/Orkas), [SparkPilot](https://github.com/ashhart/SparkPilot), [Splash](https://github.com/incoai/splash), [Strata](https://github.com/Niko1221/Strata) |
+| Add skills, extensions, or MCP tools | [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness), [gcloud MCP servers](https://github.com/googleapis/gcloud-mcp) (cloud), [Google Agent Skills](https://github.com/google/skills) (cloud), [Matt Pocock's skills](https://github.com/mattpocock/skills), [Oh My Pi](https://github.com/can1357/oh-my-pi), [Orkas](https://github.com/Orkas-AI/Orkas), [Pi](https://github.com/earendil-works/pi) |
 | Use optional cloud integrations | [gcloud MCP servers](https://github.com/googleapis/gcloud-mcp) (cloud), [Google Agent Skills](https://github.com/google/skills) (cloud) |
 
 ## Browse by category
@@ -325,6 +325,16 @@ inactivity does not prove abandonment. See [maintenance](docs/maintenance.md).
   - Note: Posting is public and needs a Moltbook account; the owner verifies an email address and an X account (as of October 2026). A local two-agent dialogue runs without an account.
   - Note: Posts wait for confirmation by default, but scheduled sessions run with --auto and post without asking. The agent talks only to moltbook.com and to Ollama on localhost.
   - Note: A long-running research experiment, not a productivity tool; changes it proposes to its constitution, identity, and skills take effect only after a person adopts them.
+
+- [Orkas](https://github.com/Orkas-AI/Orkas): Open-source, local-first desktop AI workforce where Commander coordinates specialist project work, with supported own-provider API keys and compatible local model endpoints.
+  - Local client or agent. Platforms: macOS, Windows, Linux. Hardware: Not recorded.
+  - License: [MIT](https://github.com/Orkas-AI/Orkas/blob/10e4e61b9e7549312060b9ee613c105228801181/LICENSE). [Metadata and evidence](data/projects/orkas.json).
+  - Documentation reviewed: 2026-10-18. Repository: not checked yet.
+  - Note: Orkas is a desktop client and agent workspace, not a model inference server; a suitable model endpoint is configured separately.
+  - Note: Packaged installers cover macOS and Windows 10+; Linux currently runs from source on glibc 2.34+ x64 or arm64, not musl-based distributions.
+  - Note: Local endpoint compatibility depends on the selected model and supported protocol; no hardware or model-level runtime certification was performed.
+  - Note: Remote model providers and authorized external tools require network access and can receive task data; provider usage can cost extra.
+  - Note: The source build has no Orkas account layer; packaged official builds require sign-in and optional managed services have separate terms.
 
 - [SparkPilot](https://github.com/ashhart/SparkPilot): Connect Apple devices to DGX Spark for private chat, model management, and authenticated runtime access.
   - Local client or agent. Platforms: iOS, iPadOS, Linux. Hardware: DGX Spark / GB10.
