@@ -45,10 +45,10 @@ inactivity does not prove abandonment. See [maintenance](docs/maintenance.md).
 | Run autonomous agents with local models | [Contemplative Agent](https://github.com/shimo4228/contemplative-agent) |
 | Test tool-calling quality | [Inference Atlas](https://github.com/0xBakeer/inference-atlas), [Spark Bench](https://github.com/Weschera/spark-bench), [tool-eval-bench](https://github.com/SeraphimSerapis/tool-eval-bench) |
 | Compare inference speed | [Inference Atlas](https://github.com/0xBakeer/inference-atlas), [llama-benchy](https://github.com/eugr/llama-benchy), [RigMark](https://github.com/alexellis/rigmark), [Spark Bench](https://github.com/Weschera/spark-bench), [Spark Tools](https://github.com/knapcio/spark-tools), [tool-eval-bench](https://github.com/SeraphimSerapis/tool-eval-bench) |
-| Deploy or manage a cluster | [kindling-spark-os](https://github.com/kindlingai/kindling-spark-os), [MCDMA](https://github.com/ashhart/MCDMA), [mentat](https://github.com/kindlingai/mentat), [spark-vllm-docker](https://github.com/eugr/spark-vllm-docker), [sparkrun](https://github.com/spark-arena/sparkrun), [Sqwakie](https://github.com/alexcarney460-hue/walkie) |
+| Deploy or manage a cluster | [DGX Spark Networking](https://github.com/christopherowen/dgx-spark-networking), [kindling-spark-os](https://github.com/kindlingai/kindling-spark-os), [MCDMA](https://github.com/ashhart/MCDMA), [mentat](https://github.com/kindlingai/mentat), [spark-vllm-docker](https://github.com/eugr/spark-vllm-docker), [sparkrun](https://github.com/spark-arena/sparkrun), [Sqwakie](https://github.com/alexcarney460-hue/walkie) |
 | Set up local AI | [boots / ai-bootstrap](https://github.com/kindlingai/boots), [kindling-spark-os](https://github.com/kindlingai/kindling-spark-os), [sparkrun](https://github.com/spark-arena/sparkrun) |
 | Monitor my setup | [SparkDash](https://github.com/MiaAI-Lab/sparkDash) |
-| Troubleshoot my setup | [Spark Doctor](https://github.com/joeynyc/spark-doctor) |
+| Troubleshoot my setup | [DGX Spark Networking](https://github.com/christopherowen/dgx-spark-networking), [Spark Doctor](https://github.com/joeynyc/spark-doctor) |
 | Tune thermals and memory | [DGX Spark Fan Control](https://github.com/christopherowen/dgx-spark-fan-control), [DGX Spark Memory Saver](https://github.com/christopherowen/dgx-spark-memory-saver) |
 | Validate or simulate inference configurations | [Spark Tools](https://github.com/knapcio/spark-tools) |
 | Chat with a local model | [DwarfStar / ds4](https://github.com/antirez/ds4), [mlx-serve](https://github.com/ddalcu/mlx-serve), [oMLX](https://github.com/jundot/omlx), [SparkPilot](https://github.com/ashhart/SparkPilot), [Splash](https://github.com/incoai/splash), [Strata](https://github.com/Niko1221/Strata) |
@@ -161,6 +161,16 @@ inactivity does not prove abandonment. See [maintenance](docs/maintenance.md).
 <a id="clustering"></a>
 
 ### Clustering and interconnects
+
+- [DGX Spark Networking](https://github.com/christopherowen/dgx-spark-networking): RoCE collectives, patched NCCL profiles, topology discovery, and fabric probes for multi-node DGX Spark inference.
+  - Local workload. Platforms: Linux. Hardware: DGX Spark / GB10.
+  - License: [Apache-2.0](https://raw.githubusercontent.com/christopherowen/dgx-spark-networking/f7fcc1e2937f19b6f4f3539b3fe0e43a51201110/LICENSE). [Metadata and evidence](data/projects/dgx-spark-networking.json).
+  - Documentation reviewed: 2026-10-18. Repository: not checked yet.
+  - Note: Documented node stack includes DGX Spark OS 26.09+, kernel 7.0.0-1019-nvidia with kho=off, driver 580.178.04, ConnectX-7 firmware 28.45.4028, and rdma-core 50.
+  - Note: Needs MTU 9000, static IPv4 per cable stripe, GID index 3, unlimited locked memory, libibverbs headers, and a C compiler. Container recipes require NVIDIA runtime, host networking, RDMA devices, and IPC\_LOCK.
+  - Note: One-shot runtime needs torch, cuda-python, and TileLang 0.1.15+; every NCCL profile requires a rebuilt library with the packaged send-path fence patch to avoid hangs.
+  - Note: No adapter ships for upstream vLLM or SGLang. Switched 2-16-node profiles are configuration paths not qualified on the author's fleet; GPU-initiated transport is not implemented.
+  - Note: Does not configure hosts or supervise serving. Probe and benchmark each fabric before use; collective failures require restarting the rank group.
 
 - [MCDMA](https://github.com/ashhart/MCDMA): Configure and verify RDMA links between supported Mac and Linux hosts for distributed local inference.
   - Local workload. Platforms: macOS, Linux. Hardware: Apple Silicon, DGX Spark / GB10, AMD GPU.
